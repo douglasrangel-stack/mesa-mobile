@@ -1,0 +1,12 @@
+.main-footer {
+    position: relative;
+    top: 75px;
+    background: $blue;
+    padding: 40px;
+    &__copy {
+        font-size: 14px;
+        color: #fff;
+        text-align: center;
+        margin: 0;
+    }
+}

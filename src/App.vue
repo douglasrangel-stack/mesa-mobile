@@ -1,11 +1,27 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-    </div>
-    <router-view/>
+  <div id="app" class="app">
+    <TheHeader/>
+    <main class="main">
+      <transition mode="out-in">
+        <router-view/>
+      </transition>
+    </main>
+    <TheFooter/>
   </div>
 </template>
+
+<script>
+import TheHeader from '@/components/TheHeader.vue'
+import TheFooter from '@/components/TheFooter.vue'
+
+export default ({
+  components: {
+    TheHeader,
+    TheFooter
+  },
+})
+</script>
+
 
 <style>
 
