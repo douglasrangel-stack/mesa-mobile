@@ -42,13 +42,13 @@ export default {
         loginApi() {
             this.error = [];
             this.$store.dispatch("loginUser", this.login).then((r) => {
-                console.log(r.data.id);
+                window.localStorage.token = r.data.token;
                 this.id = r.data.id;
                 this.$store.dispatch("getUser", this.id);
                 this.$router.push("/user");
             }).catch(error => {
-                console.log(error.response.data.error);
                 this.error.push(error.response.data.error);
+
             });
         }
     }

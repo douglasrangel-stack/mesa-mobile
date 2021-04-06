@@ -34,6 +34,7 @@ export default new Vuex.Store({
         },
         createUser(context, payload) {
             return api.post("/register", payload).then(r => {
+                window.localStorage.token = r.data.token;
                 context.commit("UPDATE_USER", { id: r.data.id })
             })
         },
@@ -52,6 +53,7 @@ export default new Vuex.Store({
                 password: "",
                 first_name: ""
             });
+            window.localStorage.removeItem("token");
             context.commit("UPDATE_LOGIN", false);
         },
         loginUser(context, payload) {

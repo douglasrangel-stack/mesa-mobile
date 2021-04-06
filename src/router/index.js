@@ -27,6 +27,9 @@ const routes = [{
     {
         path: '/user',
         component: User,
+        meta: {
+            login: true
+        },
         children: [{
                 path: '',
                 name: 'UserProfile',
@@ -47,5 +50,17 @@ const router = new VueRouter({
     base: process.env.BASE_URL,
     routes
 })
+
+router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.login)) {
+        if (!window.localStorage.token) {
+            next("/login");
+        } else {
+            next();
+        }
+    } else {
+        next();
+    }
+});
 
 export default router

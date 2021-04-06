@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     <div v-else-if="users && users.length === 0" key="notfound">
-                        <p>Nenhum usuário encontrado</p>
+                        <p class="notfound">Nenhum usuário encontrado</p>
                     </div>
                     <div v-else key="loader">
                         <Loader/>

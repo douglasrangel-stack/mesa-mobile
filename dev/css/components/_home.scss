@@ -1,7 +1,7 @@
 .places-home {
     position: relative;
     padding: 60px 0 80px;
-    background: #fafafa url(../images/map.png);
+    background: #fafafa url(../images/pattern.svg);
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -35,10 +35,36 @@
     }
 }
 
+.location_box {
+    padding: 10px;
+    border: 1px solid #fafafa;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+    margin-bottom: 30px;
+    img {
+        margin-bottom: 5px;
+    }
+    h2 {
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: 600;
+        color: $text;
+        margin-bottom: 0;
+    }
+    p {
+        font-size: 15px;
+        line-height: 22px;
+        color: $text;
+        margin: 0;
+    }
+    &:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
 .box-users {
     padding: 20px;
     border: 1px solid #fafafa;
-    border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
